@@ -8,8 +8,7 @@ public class DBPref extends DBHelper{
     public DBPref(Context context) {
         super(context);
     }
-    public void addRecord(String val, String user)
-    {
+    public void insert(String val, String user) {
         open();
         ContentValues cv = new ContentValues();
         cv.put("val", val);
@@ -17,13 +16,11 @@ public class DBPref extends DBHelper{
         //.....
         this.db.insert("preferences", null, cv);
     }
-    public void delete()
-    {
+    public void delete() {
         open();
         this.db.delete("preferences", "", null);
     }
-    public void update(String val, String user)
-    {
+    public void update(String val, String user) {
         open();
         ContentValues cv = new ContentValues();
         cv.put("val", val);
