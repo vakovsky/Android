@@ -16,7 +16,7 @@ public class MainActivitySec extends AppCompatActivity {
         int c = val1 * val2;
         Intent resultIntent = new Intent();
         resultIntent.putExtra("key3", c);
-        setIntent(resultIntent);
+        setResult(10, resultIntent);
         finish();
     }
 }
