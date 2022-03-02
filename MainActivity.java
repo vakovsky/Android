@@ -16,8 +16,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivitySec.class);
 
         //this.startActivity(intent);
+        
         intent.putExtra("key1",23);
-        //intent.putExtra("key2",14);
+        intent.putExtra("key2",14);
         this.startActivityForResult(intent,10);
     }
 
