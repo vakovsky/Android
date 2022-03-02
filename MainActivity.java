@@ -7,12 +7,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
-
+    TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        textView = findViewById(R.id.text1);
+        textView.setText(String.valueOf(0));
+        
         Intent intent = new Intent(this, MainActivitySec.class);
 
         //this.startActivity(intent);
@@ -26,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         int val3 = data.getIntExtra("key3", 0);
-        //TextView textView = findViewById(R.id.text1);
-        //textView.setText(String.valueOf(val3));
+        textView.setText(String.valueOf(val3));
     }
 }
