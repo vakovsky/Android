@@ -15,7 +15,7 @@ public class DBPersonHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table users (_id integer primary key autoincrement, user text not null, pass text not null);");
+        db.execSQL("create table users (_id integer primary key autoincrement, user text not null, email text not null);");
     }
 
     @Override
