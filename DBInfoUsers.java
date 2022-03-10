@@ -9,17 +9,17 @@ public class DBInfoUsers  extends DBPersonHelper{
         super(context);
     }
 
-    public void insert(String user, String pass) {
+    public void insert(String user, String email) {
         open();
         ContentValues cv = new ContentValues();
         cv.put("user", user);
-        cv.put("pass", pass);
+        cv.put("email", email);
         //...
         this.db.insert("users", null, cv);
     }
 
     public Cursor select() {
         open();
-        return this.db.query("users",new String[]{"user","pass"}, null, null, null, null, null);
+        return this.db.query("users",new String[]{"user","email"}, null, null, null, null, null);
     }
 }
