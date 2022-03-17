@@ -4,9 +4,20 @@ public class User {
     String userName;
     String eMail;
 
-    public User(String userName, String eMail) {
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    String id;
+
+    public User(String userName, String eMail, String id) {
         this.userName = userName;
         this.eMail = eMail;
+        this.id = id;
     }
 
     public String getUserName() {
