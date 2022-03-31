@@ -22,6 +22,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+//https://developer.android.com/training/camera/cameradirect
+
 public class AndroidSurfaceviewExample extends Activity {
 
     SurfaceHolder.Callback scb;
