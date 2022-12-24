@@ -12,7 +12,6 @@ type MainActivity1 () =
 
   override this.OnCreate(bundle) =
     base.OnCreate (bundle)
-    // Create your application here
     this.SetContentView (Resources.Layout.layout1)
 
     let mutable mediaPlayer : MediaPlayer = MediaPlayer.Create(this, Resources.Raw.christmas)
