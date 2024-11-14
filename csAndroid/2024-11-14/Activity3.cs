@@ -22,7 +22,6 @@ namespace App2
             SetContentView(Resource.Layout.layout3);
             listView1 = FindViewById<ListView>(Resource.Id.listView1);
             cities = new List<City>();
-            cities.Add(new City { Cityname = "София", Population = 1190256 });
             cities.Add(new City { Cityname = "Пловдив", Population = 321824 });
             cities.Add(new City { Cityname = "Варна", Population = 311093 });
             cities.Add(new City { Cityname = "Бургас", Population = 188242 });
