@@ -1,10 +1,11 @@
+using Android;
 using Android.App;
 using Android.OS;
 using Android.Widget;
 using System;
 using System.Collections.Generic;
 
-namespace App2
+namespace App1
 {
     [Activity(Label = "Activity3", MainLauncher = true)]
     public class Activity3 : Activity
