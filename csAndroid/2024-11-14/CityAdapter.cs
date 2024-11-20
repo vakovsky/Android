@@ -33,7 +33,7 @@ namespace App3
             tw1.Text = data[position].Cityname;
 
             TextView tw2 = row.FindViewById<TextView>(Resource.Id.twPop);
-            tw2.Text = data[position].Pop;
+            tw2.Text = data[position].Population.ToString();
 
             return row;
         }
