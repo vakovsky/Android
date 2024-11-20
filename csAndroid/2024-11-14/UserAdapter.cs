@@ -4,7 +4,7 @@ using Android.Widget;
 using System.Collections.Generic;
 using Android.Content;
 
-namespace App2
+namespace App1
 {
     public class User
     {
