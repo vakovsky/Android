@@ -46,7 +46,7 @@ namespace App1
             Toast.MakeText(this,
                         cities[e.Position].Cityname + " - " +
                         cities[e.Position].Population.ToString()
-                        , ToastLength.Long).Show();
+                        , ToastLength.Short).Show();
         }
     }
 }
