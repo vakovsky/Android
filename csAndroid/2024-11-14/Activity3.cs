@@ -32,12 +32,21 @@ namespace App1
             button1.Click += Button1_Click;
             editText1 = FindViewById<EditText>(Resource.Id.editText1);
             editText2 = FindViewById<EditText>(Resource.Id.editText2);
+            listView1.ItemClick += ListView1_ItemClick;
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
             cities.Add(new City { Cityname = editText1.Text, Population = int.Parse(editText2.Text) });
             listView1.Adapter = new CityAdapter(this, Resource.Layout.main_list_row, cities);
+        }
+
+        private void ListView1_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            Toast.MakeText(this,
+                        cities[e.Position].Cityname + " - " +
+                        cities[e.Position].Population.ToString()
+                        , ToastLength.Long).Show();
         }
     }
 }
