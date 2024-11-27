@@ -1,0 +1,50 @@
+using Android.App;
+using Android.Content;
+using Android.Hardware;
+using Android.OS;
+using Android.Runtime;
+using Android.Views;
+using Android.Widget;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace App3
+{
+    [Activity(Label = "Activity1", MainLauncher = true)]
+    public class Activity1 : Activity, ISensorEventListener
+    {
+        TextView textView1;
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+            // Create your application here
+            SetContentView(Resource.Layout.layout1);
+            textView1 = FindViewById<TextView>(Resource.Id.textView1);
+            textView1.Text = "-----";
+
+            SensorType sensorType = SensorType.Light;
+            SensorManager sensorManager = (SensorManager)GetSystemService(SensorService);
+            Sensor sensor = sensorManager.GetDefaultSensor(SensorType.Light);
+            sensorManager.RegisterListener(this, sensor, SensorDelay.Normal);
+        }
+
+        void ISensorEventListener.OnAccuracyChanged(Sensor sensor, SensorStatus accuracy)
+        {
+             
+        }
+
+        void ISensorEventListener.OnSensorChanged(SensorEvent e)
+        {
+            textView1.Text = e.Values[0].ToString();
+        }
+
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+            var sensorManager = (SensorManager)GetSystemService(SensorService);
+            sensorManager.UnregisterListener(this);
+        }
+    }
+}
