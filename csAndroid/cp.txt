@@ -1,0 +1,64 @@
+using Android.App;
+using Android.Content;
+using Android.OS;
+using Android.Provider;
+using Android.Runtime;
+using Android.Telephony;
+using Android.Views;
+using Android.Widget;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace App2
+{
+    [Activity(Label = "Activity5", MainLauncher = true)]
+    public class Activity5 : Activity
+    {
+        TextView textView1;
+        Button button1;
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+
+            // Create your application here
+            SetContentView(Resource.Layout.layout5);
+            textView1 = FindViewById<TextView>(Resource.Id.textView1);
+            button1 = FindViewById<Button>(Resource.Id.button1);
+            button1.Click += Button1_Click;
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            ContentResolver resolver = ContentResolver;
+            Android.Net.Uri uri = Android.Net.Uri.Parse("content://sms/inbox");
+            //var c = resolver.Query(uri, null, null, null, null);
+            //var c = resolver.Query(uri, new string[] { "address", "body" }, null, null, null);
+            //var c = resolver.Query(uri, new string[] { "address", "body" },"address = 123", null, null);
+            /*var c = resolver.Query(uri,
+                new string[] { "address", "body" },
+                "address = ? and body = ?",
+                new string[] { "123", "Фактура." },
+                null);*/
+            var c = resolver.Query(uri,
+                new string[] { "_id", "address", "body" },
+                "address = ? and body = ?",
+                new string[] { "123", "Фактура." },
+                "_id");
+            textView1.Text = "";
+            var k = c.ColumnCount;
+            for (int i = 0; i < k; i++)
+            {
+                textView1.Text += c.GetColumnName(i) + "|" + "\n\r";
+            }
+            while (c.MoveToNext())
+            {
+                textView1.Text += c.GetString(0) + "|" + "\n\r";
+                textView1.Text += c.GetString(1) + "|" + "\n\r";
+                textView1.Text += c.GetString(2) + "|" + "\n\r";
+            }
+        }
+    }
+}
