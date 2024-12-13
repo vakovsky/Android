@@ -11,5 +11,3 @@
 #####  [Използване на апаратните сензори.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-12-04)
 #####  [Използване на доставчици на съдържание.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-12-11)
 #####  [Използване на бази от данни.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-12-20)
-###### [DataBase Microsoft](https://learn.microsoft.com/en-us/xamarin/android/data-cloud/data-access/using-sqlite-orm)
-###### [DataBase sqlite-net](https://github.com/praeclarum/sqlite-net)
