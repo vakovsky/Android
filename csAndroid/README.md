@@ -4,5 +4,6 @@
 # [Използване на стандартни списъци с обекти стрингове - ListView, ArrayAdapter](https://github.com/vakovsky/Android/blob/main/csAndroid/arch/Doc1.pdf)
 # [Използване на собственни списъци със собственни обекти - ListView, MyObjectAdapter](https://github.com/vakovsky/Android/blob/main/csAndroid/arch/Doc1.pdf)
 # [Използване на файлови операции със стрингове](https://github.com/vakovsky/Android/blob/main/csAndroid/arch/Doc1.pdf)
+# [Използване на апаратните сензори](https://github.com/vakovsky/Android/blob/main/csAndroid/arch/Doc1.pdf)
 ## [DataBase Microsoft](https://learn.microsoft.com/en-us/xamarin/android/data-cloud/data-access/using-sqlite-orm)
 ## [DataBase sqlite-net](https://github.com/praeclarum/sqlite-net)
