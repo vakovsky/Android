@@ -1,5 +1,4 @@
 # Android
-# [Създаване на мобилно приложение с използване на Model-View-Controller. Doc1.docx](https://github.com/vakovsky/Android/blob/main/Doc1.docx)
 ## [Android C#](https://github.com/vakovsky/Android/blob/main/csAndroid)
 ## [Android F#](https://github.com/vakovsky/Android/blob/main/fsAndroid)
 ## [Android Java](https://github.com/vakovsky/Android/blob/main/javaAndroid)
