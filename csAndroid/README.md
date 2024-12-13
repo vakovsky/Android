@@ -6,7 +6,7 @@
 #####  [Използване на собственни списъци със стандартни обекти - ListView, ArrayAdapter.](https://github.com/vakovsky/Android/blob/main/csAndroid/arch/Doc1.pdf)
 #####  [Използване на файлови операции.](https://github.com/vakovsky/Android/blob/main/csAndroid/arch/Doc1.pdf)
 #####  [Използване на собственни списъци със собственни обекти - ListView, MyObjectAdapter.](https://github.com/vakovsky/Android/blob/main/csAndroid/arch/Doc1.pdf)
-#####  [Използване на апаратните сензори.](https://github.com/vakovsky/Android/blob/main/csAndroid/arch/Doc1.pdf)
+#####  [Използване на апаратните сензори.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-12-04)
 #####  [Използване на доставчици на съдържание.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-12-11)
 #####  [Използване на бази от данни.](https://github.com/vakovsky/Android/blob/main/csAndroid/arch/Doc1.pdf)
 ###### [DataBase Microsoft](https://learn.microsoft.com/en-us/xamarin/android/data-cloud/data-access/using-sqlite-orm)
