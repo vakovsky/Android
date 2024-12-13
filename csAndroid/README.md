@@ -1,4 +1,4 @@
-## [Създаване на мобилно приложение с използване на Model-View-Controller.](https://github.com/vakovsky/Android/blob/main/csAndroid/arch/Doc1.pdf)
+## [Създаване на мобилно приложение с използване на Model-View-Controller, използване на библиотека.](https://github.com/vakovsky/Android/blob/main/csAndroid/arch/Doc1.pdf)
 ##  [Използване на допълнителни прозорци външни за приложението - Intent.](https://github.com/vakovsky/Android/blob/main/csAndroid/arch/Doc1.pdf)
 ##  [Използване на допълнителни прозорци вътрешни за приложението- Intent.](https://github.com/vakovsky/Android/blob/main/csAndroid/arch/Doc1.pdf)
 ##  [Използване на собственни списъци със собственни обекти - ListView, MyObjectAdapter.](https://github.com/vakovsky/Android/blob/main/csAndroid/arch/Doc1.pdf)
