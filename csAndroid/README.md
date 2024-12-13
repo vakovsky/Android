@@ -1,6 +1,7 @@
 # [Създаване на мобилно приложение с използване на Model-View-Controller. Doc1.pdf](https://github.com/vakovsky/Android/blob/main/csAndroid/arch/Doc1.pdf)
 # [Използване на допълнителни прозорци - Intent](https://github.com/vakovsky/Android/blob/main/csAndroid/arch/Doc1.pdf)
 # [Използване на допълнителни прозорци - Intent](https://github.com/vakovsky/Android/blob/main/csAndroid/arch/Doc1.pdf)
-# [Използване на стандартни със списъци обекти стрингове - ListView](https://github.com/vakovsky/Android/blob/main/csAndroid/arch/Doc1.pdf)
+# [Използване на стандартни списъци с обекти стрингове - ListView, ArrayAdapter](https://github.com/vakovsky/Android/blob/main/csAndroid/arch/Doc1.pdf)
+# [Използване на собственни списъци със собственни обекти - ListView, ObjectAdapter](https://github.com/vakovsky/Android/blob/main/csAndroid/arch/Doc1.pdf)
 ## [DataBase Microsoft](https://learn.microsoft.com/en-us/xamarin/android/data-cloud/data-access/using-sqlite-orm)
 ## [DataBase sqlite-net](https://github.com/praeclarum/sqlite-net)
