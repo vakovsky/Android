@@ -3,6 +3,7 @@
 ###  [Използване на допълнителни прозорци вътрешни за приложението- Intent.](https://github.com/vakovsky/Android/blob/main/csAndroid/arch/DocumentAndroid2.pdf)
 ###  [Използване на допълнителни прозорци вътрешни за приложението с предаване и получаване на параметри- Intent.](https://github.com/vakovsky/Android/blob/main/csAndroid/arch/DocumentAndroid3.pdf)
 ###  [Използване на допълнителни прозорци вътрешни за приложението с връщане на параметри- Intent.](https://github.com/vakovsky/Android/blob/main/csAndroid/arch/DocumentAndroid3.pdf)
+###  [Използване на собственни списъци със стандартни обекти - ListView, ArrayAdapter.](https://github.com/vakovsky/Android/blob/main/csAndroid/arch/Doc1.pdf)
 ###  [Използване на собственни списъци със собственни обекти - ListView, MyObjectAdapter.](https://github.com/vakovsky/Android/blob/main/csAndroid/arch/Doc1.pdf)
 ###  [Използване на файлови операции.](https://github.com/vakovsky/Android/blob/main/csAndroid/arch/Doc1.pdf)
 ###  [Използване на апаратните сензори.](https://github.com/vakovsky/Android/blob/main/csAndroid/arch/Doc1.pdf)
