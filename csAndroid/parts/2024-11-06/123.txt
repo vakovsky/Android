@@ -2,3 +2,33 @@
 2. External storage
   2.1 Public files
   2.2 Private files
+
+
+private void Button2_Click(object sender, EventArgs e)
+{
+    string path = Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDocuments).AbsolutePath + "/data.txt";
+    using (StreamWriter streamWriter = new StreamWriter(path))
+    {
+        foreach (Transport item in transportAdapter.transports)
+        {
+            streamWriter.WriteLine(item.N + ":" + item.DayOrNight.ToString());
+        }
+    }
+}
+private void Button3_Click(object sender, EventArgs e)
+{
+    string path = Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDocuments).AbsolutePath + "/data.txt";
+    using (StreamReader streamReader = new StreamReader(path))
+    {
+        transports.Clear();
+        while (!streamReader.EndOfStream)
+        {
+            string line = streamReader.ReadLine();
+            string[] items = line.Split(':');
+            Transport transport = new Transport { N = int.Parse(items[0]), DayOrNight = items[1] };
+            transports.Add(transport);
+        }
+        //adapter = new ArrayAdapter<Transport>(this, Android.Resource.Layout.SimpleListItem1, transports);
+        //listView1.Adapter = adapter;
+    }
+}
