@@ -4,13 +4,67 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <ProgressBar
-        style="?android:attr/progressBarStyleHorizontal"
+    <CheckBox
+        android:text="CheckBox1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/checkBox1" />
+    <CheckBox
+        android:text="CheckBox2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBox2" />
+    <CheckBox
+        android:text="CheckBox3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBox3" />
+    <RadioGroup
         android:minWidth="25px"
         android:minHeight="25px"
-        android:id="@+id/progressBar1" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioGroup2">
+        <RadioButton
+            android:text="RadioButton1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton1" />
+        <RadioButton
+            android:text="RadioButton2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:id="@+id/radioButton2" />
+        <RadioButton
+            android:text="RadioButton3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:id="@+id/radioButton3" />
+    </RadioGroup>
+    <RadioGroup
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioGroup1">
+        <RadioButton
+            android:text="RadioButton4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton4" />
+        <RadioButton
+            android:text="RadioButton5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton5" />
+        <RadioButton
+            android:text="RadioButton6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton6" />
+    </RadioGroup>
     <SeekBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,53 +73,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/switch1" />
-    <CheckBox
-        android:text="CheckBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/checkBox1" />
-    <RadioButton
-        android:text="RadioButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/radioButton1" />
-    <RadioButton
-        android:text="RadioButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/radioButton2" />
-    <RadioGroup
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/radioGroup1">
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="RadioButton"
-            android:id="@+id/radioButton3" />
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="RadioButton"
-            android:id="@+id/radioButton4" />
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="RadioButton"
-            android:id="@+id/radioButton5" />
-    </RadioGroup>
     <ImageView
         android:src="@android:drawable/ic_menu_gallery"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:id="@+id/imageView1" />
     <ImageButton
         android:src="@android:drawable/ic_menu_gallery"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
+        android:scaleType="fitStart"
         android:id="@+id/imageButton1" />
-
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/progressBar1" />
 </LinearLayout>
