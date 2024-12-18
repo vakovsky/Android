@@ -1,1 +1,5 @@
 # [csAndroid](https://github.com/vakovsky/Android/tree/main/csAndroid)
+## [1. Internal storage]
+## [2. External storage]
+  ### [2.1 Public files]
+  ### [2.2 Private files]
