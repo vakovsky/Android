@@ -83,18 +83,18 @@ namespace App3
     public class DBHelper : SQLiteOpenHelper
     {
         protected SQLiteDatabase db;
-        public DBHelper(Context context) : base(context, "mydb.sqlite", null, 2)
+        public DBHelper(Context context) : base(context, "mydb.sqlite", null, 1)
         {
         }
 
         public override void OnCreate(SQLiteDatabase db)
         {
-            db.ExecSQL("create table preferences (_id integer primary key autoincrement, val text not null, user text not null);");
+            db.ExecSQL("create table Cities (_id integer primary key autoincrement, Cityname text not null, Population text not null);");
         }
 
         public override void OnUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
         {
-            db.ExecSQL("create table Cities (_id integer primary key autoincrement, Cityname text not null, Population text not null);");
+            
         }
 
         public void open()
