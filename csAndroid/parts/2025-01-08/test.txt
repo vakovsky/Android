@@ -25,7 +25,7 @@ namespace App3
         {
             base.OnCreate(savedInstanceState);
 
-            SetContentView(Resource.Layout.layout3);
+            SetContentView(Resource.Layout.layoutdb);
             listView1 = FindViewById<ListView>(Resource.Id.listView1);
             button1 = FindViewById<Button>(Resource.Id.button1);
             button1.Click += Button1_Click;
@@ -62,3 +62,205 @@ namespace App3
         }
     }
 }
+
+
+//
+using Android.App;
+using Android.Content;
+using Android.Database;
+using Android.Database.Sqlite;
+using Android.OS;
+using Android.Runtime;
+using Android.Views;
+using Android.Widget;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace App3
+{
+    public class DBHelper : SQLiteOpenHelper
+    {
+        protected SQLiteDatabase db;
+        public DBHelper(Context context) : base(context, "mydb.sqlite", null, 2)
+        {
+        }
+
+        public override void OnCreate(SQLiteDatabase db)
+        {
+            db.ExecSQL("create table preferences (_id integer primary key autoincrement, val text not null, user text not null);");
+        }
+
+        public override void OnUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
+        {
+            db.ExecSQL("create table Cities (_id integer primary key autoincrement, Cityname text not null, Population text not null);");
+        }
+
+        public void open()
+        {
+            db = this.WritableDatabase;
+        }
+
+        public void close()
+        {
+            db.Close();
+        }
+    }
+}
+
+
+
+using Android.App;
+using Android.Content;
+using Android.Graphics;
+using Android.OS;
+using Android.Runtime;
+using Android.Views;
+using Android.Widget;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace App3
+{
+    public class DBCities : DBHelper
+    {
+        public DBCities(Context context) : base(context)
+        {
+        }
+
+        public void Insert(string Cityname, string Population)
+        {
+            open();
+            ContentValues cv = new ContentValues();
+            cv.Put("Cityname", Cityname);
+            cv.Put("Population", Population);
+            //.....
+            this.db.Insert("Cities", null, cv);
+        }
+
+        public Android.Database.ICursor Select()
+        {
+            open();
+            return this.db.Query("Cities", new String[] { "Cityname", "Population" }, null, null, null, null, null);
+        }
+    }
+}
+
+
+namespace App3
+{
+    public class City
+    {
+        public string Cityname { get; set; }
+        public int Population { get; set; }
+    }
+}
+
+
+using Android.App;
+using Android.Content;
+using Android.OS;
+using Android.Runtime;
+using Android.Views;
+using Android.Widget;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace App3
+{
+    public class CityAdapter : ArrayAdapter<City>
+    {
+        private Context context;
+        private int layoutId;
+        private List<City> data;
+        public CityAdapter(Context context, int resource, List<City> objects) : base(context, resource, objects)
+        {
+
+            this.context = context;
+            this.layoutId = resource;
+            this.data = objects;
+        }
+
+        public override View GetView(int position, View convertView, ViewGroup parent)
+        {
+            LayoutInflater layoutInflater = ((Activity)context).LayoutInflater;
+            View row = layoutInflater.Inflate(layoutId, parent, false);
+
+            TextView tw1 = row.FindViewById<TextView>(Resource.Id.twName);
+            tw1.Text = data[position].Cityname;
+
+            TextView tw2 = row.FindViewById<TextView>(Resource.Id.twPop);
+            tw2.Text = data[position].Population.ToString();
+
+            return row;
+        }
+    }
+}
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/twName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:text="TextView"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/twPop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:text="TextView"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="14sp" />
+</LinearLayout>
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:text="City"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1" />
+    <EditText
+        android:text="София"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText1" />
+    <TextView
+        android:text="Population"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2" />
+    <EditText
+        android:text="1190256"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText2" />
+    <Button
+        android:text="Add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button1" />
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/listView1" />
+</LinearLayout>
