@@ -1,3 +1,6 @@
+
+
+
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -64,44 +67,34 @@ namespace App3
 }
 
 
-//
-using Android.App;
 using Android.Content;
-using Android.Database;
 using Android.Database.Sqlite;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace App3
 {
     public class DBHelper : SQLiteOpenHelper
     {
-        protected SQLiteDatabase db;
-        public DBHelper(Context context) : base(context, "mydb.sqlite", null, 1)
-        {
-        }
+        public SQLiteDatabase db;
+        private static string dbf = "data.db";
+        public DBHelper(Context context) : base(context, dbf, null, 1) { }
 
         public override void OnCreate(SQLiteDatabase db)
         {
-            db.ExecSQL("create table Cities (_id integer primary key autoincrement, Cityname text not null, Population text not null);");
+            db.ExecSQL("create table Cities (" +
+                "_id integer primary key autoincrement," +
+                "Cityname text not null, " +
+                "Population text not null);");
         }
 
         public override void OnUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
         {
-            
+
         }
 
         public void open()
         {
-            db = this.WritableDatabase;
+            db = WritableDatabase;
         }
-
         public void close()
         {
             db.Close();
