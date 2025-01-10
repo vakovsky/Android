@@ -10,5 +10,5 @@
 #####  [10. Използване на допълнителни контроли 2-ра част.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-11-27)
 #####  [11. Използване на апаратните сензори.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-12-04)
 #####  [12. Използване на доставчици на съдържание.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-12-11)
-#####  [13. Използване на бази от данни.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2025-01-08)
-
+#####  [13. Използване на бази от данни с SQL.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2025-01-08)
+#####  [14. Използване на бази от данни с ОРМ.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2025-01-15)
