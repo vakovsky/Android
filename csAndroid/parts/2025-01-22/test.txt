@@ -1,4 +1,3 @@
-
 public void ServerApp()
 {
     var ipEndPoint = new IPEndPoint(IPAddress.Any, 13);
@@ -40,4 +39,46 @@ public void ClientApp()
     Console.WriteLine($"Message received: \"{message}\"");
     // Sample output:
     //     Message received: "📅 8/22/2022 9:07:17 AM 🕛"
+}
+
+
+using System;
+using System.Net.Sockets;
+
+namespace ConsoleApp5
+{
+    public class Tcp
+    {
+        public static DateTime TestWithTcpClient()
+        {
+            TcpClient tcpClient = new TcpClient();
+            tcpClient.Connect("localhost", 13);
+
+            NetworkStream stream = tcpClient.GetStream();
+            string message = "";
+            byte[] data = System.Text.Encoding.ASCII.GetBytes(message);
+            stream.Write(data, 0, data.Length);
+
+            data = new Byte[256];
+            string responseData = string.Empty;
+            int bytes = stream.Read(data, 0, data.Length);
+            responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
+
+            tcpClient.Close();
+
+            string[] result = responseData.Split(' ');
+            string[] stringsDate = result[1].Split('.');
+            string[] stringsTime = result[0].Split(':');
+            DateTime dateTime1 = new DateTime(
+                int.Parse(stringsDate[2]),
+                int.Parse(stringsDate[1]),
+                int.Parse(stringsDate[0]),
+                int.Parse(stringsTime[0]),
+                int.Parse(stringsTime[1]),
+                int.Parse(stringsTime[2])
+            );
+
+            return dateTime1;
+        }
+    }
 }
