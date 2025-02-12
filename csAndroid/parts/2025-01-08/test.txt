@@ -1,3 +1,7 @@
+
+
+
+
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -35,6 +39,9 @@
         android:id="@+id/listView1" />
 </LinearLayout>
 
+
+
+
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
@@ -58,11 +65,16 @@
         android:textSize="14sp" />
 </LinearLayout>
 
+
+
     public class City
     {
         public string Cityname { get; set; }
         public int Population { get; set; }
     }
+
+
+
 
 
     public class CityAdapter : ArrayAdapter<City>
@@ -72,12 +84,10 @@
         private List<City> data;
         public CityAdapter(Context context, int resource, List<City> objects) : base(context, resource, objects)
         {
-
             this.context = context;
             this.layoutId = resource;
             this.data = objects;
         }
-
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
             LayoutInflater layoutInflater = ((Activity)context).LayoutInflater;
@@ -92,6 +102,9 @@
             return row;
         }
     }
+
+
+
 
 
     public class DBHelper : SQLiteOpenHelper
@@ -146,6 +159,7 @@
             return this.db.Query("Cities", new string[] { "Cityname", "Population" }, null, null, null, null, null);
         }
     }
+
 
 
     [Activity(Label = "Activity1", MainLauncher = true)]
