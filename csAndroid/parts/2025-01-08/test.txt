@@ -48,7 +48,6 @@
         android:text="TextView"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="24sp" />
-
     <TextView
         android:id="@+id/twPop"
         android:layout_width="match_parent"
@@ -59,25 +58,13 @@
         android:textSize="14sp" />
 </LinearLayout>
 
-namespace App1
-{
     public class City
     {
         public string Cityname { get; set; }
         public int Population { get; set; }
     }
-}
 
 
-
-using Android.App;
-using Android.Content;
-using Android.Views;
-using Android.Widget;
-using System.Collections.Generic;
-
-namespace App1
-{
     public class CityAdapter : ArrayAdapter<City>
     {
         private Context context;
@@ -105,13 +92,8 @@ namespace App1
             return row;
         }
     }
-}
 
-using Android.Content;
-using Android.Database.Sqlite;
 
-namespace App1
-{
     public class DBHelper : SQLiteOpenHelper
     {
         public SQLiteDatabase db;
@@ -140,12 +122,8 @@ namespace App1
             db.Close();
         }
     }
-}
 
-using Android.Content;
 
-namespace App1
-{
     public class DBCities : DBHelper
     {
         public DBCities(Context context) : base(context)
@@ -168,22 +146,8 @@ namespace App1
             return this.db.Query("Cities", new string[] { "Cityname", "Population" }, null, null, null, null, null);
         }
     }
-}
 
 
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace App1
-{
     [Activity(Label = "Activity1", MainLauncher = true)]
     public class Activity1 : Activity
     {
@@ -235,7 +199,7 @@ namespace App1
             NewMethod();
         }
     }
-}
+
 
 
 
