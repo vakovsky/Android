@@ -1,29 +1,3 @@
-
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:id="@+id/twName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-black"
-        android:text="TextView"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="24sp" />
-
-    <TextView
-        android:id="@+id/twPop"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-black"
-        android:text="TextView"
-        android:textColor="@android:color/holo_green_dark"
-        android:textSize="14sp" />
-</LinearLayout>
-
-
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -61,7 +35,29 @@
         android:id="@+id/listView1" />
 </LinearLayout>
 
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/twName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:text="TextView"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="24sp" />
 
+    <TextView
+        android:id="@+id/twPop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:text="TextView"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="14sp" />
+</LinearLayout>
 
 namespace App1
 {
@@ -71,6 +67,8 @@ namespace App1
         public int Population { get; set; }
     }
 }
+
+
 
 using Android.App;
 using Android.Content;
@@ -109,6 +107,68 @@ namespace App1
     }
 }
 
+using Android.Content;
+using Android.Database.Sqlite;
+
+namespace App1
+{
+    public class DBHelper : SQLiteOpenHelper
+    {
+        public SQLiteDatabase db;
+        private static string dbf = "data.db";
+        public DBHelper(Context context) : base(context, dbf, null, 1) { }
+
+        public override void OnCreate(SQLiteDatabase db)
+        {
+            db.ExecSQL("create table Cities (" +
+                "_id integer primary key autoincrement," +
+                "Cityname text not null, " +
+                "Population text not null);");
+        }
+
+        public override void OnUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
+        {
+
+        }
+
+        public void open()
+        {
+            db = WritableDatabase;
+        }
+        public void close()
+        {
+            db.Close();
+        }
+    }
+}
+
+using Android.Content;
+
+namespace App1
+{
+    public class DBCities : DBHelper
+    {
+        public DBCities(Context context) : base(context)
+        {
+        }
+
+        public void Insert(string Cityname, string Population)
+        {
+            open();
+            ContentValues cv = new ContentValues();
+            cv.Put("Cityname", Cityname);
+            cv.Put("Population", Population);
+            //.....
+            this.db.Insert("Cities", null, cv);
+        }
+
+        public Android.Database.ICursor Select()
+        {
+            open();
+            return this.db.Query("Cities", new string[] { "Cityname", "Population" }, null, null, null, null, null);
+        }
+    }
+}
 
 
 using Android.App;
@@ -165,7 +225,7 @@ namespace App1
                 cities.Add(city);
             }
 
-            listView1.Adapter = new CityAdapter(this, Resource.Layout.main_list_row, cities);
+            listView1.Adapter = new CityAdapter(this, Resource.Layout.item, cities);
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -177,68 +237,8 @@ namespace App1
     }
 }
 
-using Android.Content;
-
-namespace App1
-{
-    public class DBCities : DBHelper
-    {
-        public DBCities(Context context) : base(context)
-        {
-        }
-
-        public void Insert(string Cityname, string Population)
-        {
-            open();
-            ContentValues cv = new ContentValues();
-            cv.Put("Cityname", Cityname);
-            cv.Put("Population", Population);
-            //.....
-            this.db.Insert("Cities", null, cv);
-        }
-
-        public Android.Database.ICursor Select()
-        {
-            open();
-            return this.db.Query("Cities", new string[] { "Cityname", "Population" }, null, null, null, null, null);
-        }
-    }
-}
 
 
-using Android.Content;
-using Android.Database.Sqlite;
 
-namespace App1
-{
-    public class DBHelper : SQLiteOpenHelper
-    {
-        public SQLiteDatabase db;
-        private static string dbf = "data.db";
-        public DBHelper(Context context) : base(context, dbf, null, 1) { }
-
-        public override void OnCreate(SQLiteDatabase db)
-        {
-            db.ExecSQL("create table Cities (" +
-                "_id integer primary key autoincrement," +
-                "Cityname text not null, " +
-                "Population text not null);");
-        }
-
-        public override void OnUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
-        {
-
-        }
-
-        public void open()
-        {
-            db = WritableDatabase;
-        }
-        public void close()
-        {
-            db.Close();
-        }
-    }
-}
 
 
