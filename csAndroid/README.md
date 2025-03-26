@@ -14,3 +14,5 @@
 #####  [14. Използване на бази от данни с ORM.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2025-01-15)
 #####  [15. Използване на мрежови функции TCP.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2025-01-22)
 #####  [16. Използване на мрежови функции UDP.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2025-01-29)
+#####  [17. Използване на услуги.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2025-03-19)
+#####  [17. Използване на оповестяване.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2025-03-26)
