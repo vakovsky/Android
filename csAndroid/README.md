@@ -15,4 +15,5 @@
 #####  [15. Използване на мрежови функции TCP.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2025-01-22)
 #####  [16. Използване на мрежови функции UDP.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2025-01-29)
 #####  [17. Използване на услуги.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2025-03-19)
-#####  [18. Използване на оповестяване.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2025-03-26)
+#####  [18. Използване на свързани услуги.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2025-03-19)
+#####  [19. Използване на оповестяване.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2025-03-26)
