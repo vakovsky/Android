@@ -9,9 +9,8 @@ string path1 = Path.Combine(dir1, "internal.txt");
 File.WriteAllText(path1, "Internal storage");
 
 //External – Private
-//Java.IO.File dir2 = Application.Context.GetExternalFilesDir(null);
-string dir2 = Application.Context.GetExternalFilesDir(null)?.AbsolutePath;
-string path2 = Path.Combine(dir2, "private.txt");
+Java.IO.File dir2 = Application.Context.GetExternalFilesDir(null);
+string path2 = Path.Combine(dir2.AbsolutePath, "private.txt");
 File.WriteAllText(path2, "External private storage");
 
 //External – Public
@@ -20,5 +19,6 @@ Java.IO.File dir3 = Android.OS.Environment.GetExternalStoragePublicDirectory(
 );
 string path3 = Path.Combine(dir3.AbsolutePath, "public.txt");
 File.WriteAllText(path3, "External public storage");
+
 
 
