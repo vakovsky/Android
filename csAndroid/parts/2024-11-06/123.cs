@@ -19,6 +19,3 @@ Java.IO.File dir3 = Android.OS.Environment.GetExternalStoragePublicDirectory(
 );
 string path3 = Path.Combine(dir3.AbsolutePath, "public.txt");
 File.WriteAllText(path3, "External public storage");
-
-
-
