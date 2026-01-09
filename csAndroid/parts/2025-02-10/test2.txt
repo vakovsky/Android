@@ -1,0 +1,221 @@
+using Android.App;
+using Android.Content;
+using Android.OS;
+using Android.Runtime;
+using Android.Views;
+using Android.Widget;
+using Java.Nio.Channels;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace App1
+{
+    [Activity(Label = "Activity9", MainLauncher = true)]
+    public class Activity9 : Activity
+    {
+        public static class BulgarianBankCodes
+        {
+            // IReadOnlyDictionary е напълно ОК за Xamarin
+            public static readonly IReadOnlyDictionary<string, string> All =
+            /*   new Dictionary<string, string>
+               {
+               { "BNBG", "Bulgarian National Bank" },
+               { "UNCR", "UniCredit Bulbank AD" },
+               { "BPBI", "Eurobank Bulgaria AD (Postbank)" },
+               { "STSA", "DSK Bank AD" },
+               { "FINV", "First Investment Bank AD (Fibank)" },
+               { "UBBS", "United Bulgarian Bank AD" },
+               { "CECB", "Central Cooperative Bank PLC" },
+               { "BUIN", "Allianz Bank Bulgaria AD" },
+               { "BGUS", "Bulgarian-American Credit Bank AD" },
+               { "CRBA", "Alpha Bank – Bulgaria Branch" },
+               { "BNPA", "BNP Paribas S.A. – Sofia Branch" },
+               { "NASB", "Bulgarian Development Bank EAD" },
+               { "BUIB", "CIBank JSC" },
+               { "CITI", "Citibank Europe Plc – Bulgaria Branch" },
+               { "BINV", "Commercial Bank Victoria EAD" },
+               { "DEMI", "D Commerce Bank AD" },
+               { "INGB", "ING Bank N.V. – Sofia Branch" },
+               { "IABG", "International Asset Bank AD" },
+               { "IORT", "Investbank PLC" },
+               { "ISBK", "Isbank AG – Sofia Branch" },
+               { "SOMB", "Municipal Bank PLC" },
+               { "PIRB", "Piraeus Bank Bulgaria AD" },
+               { "PRCB", "ProCredit Bank (Bulgaria) EAD" },
+               { "RZBB", "Raiffeisenbank (Bulgaria) EAD" },
+               { "TTBB", "Société Générale Expressbank" },
+               { "TCZB", "T.C. Ziraat Bankasi – Sofia Branch" },
+               { "TBIB", "TBI Bank EAD" },
+               { "TEXI", "Texim Bank AD" },
+               { "CREX", "Tokuda Bank AD" }
+               };
+
+           */
+            new Dictionary<string, string>
+            {
+                { "BNBG", "Българска народна банка" },
+                { "UNCR", "УниКредит Булбанк" },
+                { "BPBI", "Юробанк България (Пощенска банка)" },
+                { "STSA", "Банка ДСК" },
+                { "FINV", "Първа инвестиционна банка" },
+                { "UBBS", "Обединена българска банка" },
+                { "CECB", "Централна кооперативна банка" },
+                { "BUIN", "Алианц Банк България" },
+                { "BGUS", "Българо-американска кредитна банка" },
+                { "CRBA", "Алфа Банк – клон България" },
+                { "BNPA", "БНП Париба – клон София" },
+                { "NASB", "Българска банка за развитие" },
+                { "BUIB", "СИБанк" },
+                { "CITI", "Ситибанк Европа – клон България" },
+                { "INGB", "ИНГ Банк – клон София" },
+                { "IABG", "Интернешънъл Асет Банк" },
+                { "IORT", "Инвестбанк" },
+                { "ISBK", "Ишбанк – клон България" },
+                { "SOMB", "Общинска банка" },
+                { "PIRB", "Пиреос Банк България" },
+                { "PRCB", "ПроКредит Банк България" },
+                { "RZBB", "Райфайзенбанк България" },
+                { "TTBB", "Сосиете Женерал Експресбанк" },
+                { "TCZB", "Зираат Банк – клон София" },
+                { "TBIB", "Ти Би Ай Банк" },
+                { "TEXI", "Тексим Банк" },
+                { "CREX", "Токуда Банк" }
+            };
+        }
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+
+            // Create your application here
+            SetContentView(Resource.Layout.layout9);
+
+            Button button1 = FindViewById<Button>(Resource.Id.button1);
+            EditText editText1 = FindViewById<EditText>(Resource.Id.editText1);
+            //editText1.Text = "BG80BNBG96611020345678";
+
+            string bankCode = "BNBG";
+            string branchCode = "9661";
+            string accountType = "10";
+            string accountNumber = "20345678";
+
+            Spinner spinner1;
+
+            spinner1 = FindViewById<Spinner>(Resource.Id.spinner1);
+
+            var banks = BulgarianBankCodes.All
+                        .Select(b => $"{b.Key} - {b.Value}")
+                        .ToList();
+
+            var adapter = new ArrayAdapter<string>(
+                this,
+                Android.Resource.Layout.SimpleSpinnerItem,
+                banks
+            );
+
+            adapter.SetDropDownViewResource(
+                Android.Resource.Layout.SimpleSpinnerDropDownItem
+            );
+
+            spinner1.Adapter = adapter;
+
+            spinner1.ItemSelected += (s, e) =>
+            {
+                string selected = banks[e.Position];
+                bankCode = selected.Substring(0, 4);
+
+                string iban = GenerateBGIBANFast(bankCode, branchCode, accountType, accountNumber);
+
+                editText1.Text = iban;
+            };
+
+            string iban = GenerateBGIBANFast(bankCode, branchCode, accountType, accountNumber);
+
+            editText1.Text = iban;
+
+            button1.Click += delegate
+            {
+                string iban = editText1.Text;
+                bool valid = IsValidFast(iban);
+                button1.Text = valid.ToString();
+            };
+
+        }
+
+        public static bool IsValidFast(string iban)
+        {
+            if (string.IsNullOrWhiteSpace(iban))
+                return false;
+
+            iban = iban.Replace(" ", "").ToUpperInvariant();
+            if (iban.Length < 15 || iban.Length > 34)
+            {
+                return false;
+            }
+
+            string rearranged = iban.Substring(4) + iban.Substring(0, 4);
+
+            int mod = 0;
+            foreach (char c in rearranged)
+            {
+                if (char.IsDigit(c))
+                {
+                    mod = (mod * 10 + (c - '0')) % 97;
+                }
+                else if (char.IsLetter(c))
+                {
+                    int value = c - 'A' + 10;
+                    mod = (mod * 100 + value) % 97;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+            return mod == 1;
+        }
+
+        public static string GenerateBGIBANFast(string bankCode, string branchCode, string accountType, string accountNumber)
+        {
+            if (bankCode.Length != 4 || branchCode.Length != 4 || accountType.Length != 2 || accountNumber.Length != 8)
+                throw new ArgumentException("Невалидна дължина на BBAN полетата.");
+
+            string bban = bankCode + branchCode + accountType + accountNumber;
+            string countryCode = "BG";
+
+            // Placeholder за контролни цифри
+            string tempIban = countryCode + "00" + bban;
+
+            // Преместваме първите 4 символа в края
+            string rearranged = tempIban.Substring(4) + tempIban.Substring(0, 4);
+
+            // Изчисляваме mod 97 по части
+            int mod = 0;
+            foreach (char c in rearranged)
+            {
+                if (char.IsDigit(c))
+                {
+                    mod = (mod * 10 + (c - '0')) % 97;
+                }
+                else if (char.IsLetter(c))
+                {
+                    int value = c - 'A' + 10;
+                    // буквите могат да бъдат 2-цифрени (10..35)
+                    mod = (mod * 100 + value) % 97;
+                }
+                else
+                {
+                    throw new ArgumentException("Невалиден символ в BBAN или кода на страната.");
+                }
+            }
+
+            int checkDigits = 98 - mod;
+            string checkStr = checkDigits.ToString("D2");
+
+            return countryCode + checkStr + bban;
+        }
+
+    }
+}
