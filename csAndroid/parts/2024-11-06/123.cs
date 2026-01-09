@@ -4,7 +4,8 @@
   //2.2 Private files
 
 //Internal Storage
-string path1 = Path.Combine(Application.Context.FilesDir.AbsolutePath, "internal.txt");
+string dir1 = Application.Context.FilesDir.AbsolutePath;
+string path1 = Path.Combine(dir1, "internal.txt");
 File.WriteAllText(path1, "Internal storage");
 
 //External – Private
@@ -19,4 +20,5 @@ Java.IO.File dir3 = Android.OS.Environment.GetExternalStoragePublicDirectory(
 );
 string path3 = Path.Combine(dir3.AbsolutePath, "public.txt");
 File.WriteAllText(path3, "External public storage");
+
 
