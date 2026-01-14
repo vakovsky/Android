@@ -1,6 +1,6 @@
 ## [Създаване на мобилно приложение с използване на Model-View-Controller и библиотека за модели.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-09-25)
 ## [Използване на допълнителни прозорци]()
-### [Използване на допълнителни прозорци: външни за приложението - Intent.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-10-02)
+#### [Използване на допълнителни прозорци: външни за приложението - Intent.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-10-02)
 ### [Използване на допълнителни прозорци: вътрешни за приложението- Intent.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-10-09)
 ### [Използване на допълнителни прозорци: вътрешни за приложението с предаване и получаване на параметри- Intent.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-10-16)
 ### [Използване на допълнителни прозорци: вътрешни за приложението с връщане на параметри- Intent.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-10-23)
