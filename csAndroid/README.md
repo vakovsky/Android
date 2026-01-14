@@ -9,6 +9,7 @@
 #### [3.2 CheckBox](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-10-23)
 #### [3.3 SeekBar](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-10-23)
 #### [3.4 ProgressBar](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-10-23)
+#### [3.5 Switch](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-10-23)
 ## [4. Използване на допълнителни контроли 2-ра част.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-11-27)
 #### [4.1 EditText android:inputType="date"](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-10-23)
 #### [4.2 EditText android:inputType="time"](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-10-23)
