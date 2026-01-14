@@ -13,7 +13,7 @@
 #### [4.1 EditText android:inputType="date"](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-10-23)
 #### [4.2 EditText android:inputType="time"](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-10-23)
 #### [4.3 DatePicker](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-10-23)
-#### [4.4 TimePicker](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-10-23)DatePickerDialog
+#### [4.4 TimePicker](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-10-23)
 #### [4.5 DatePickerDialog](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-10-23)
 #### [4.6 TimePickerDialog](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-10-23)
 ## [Използване на файлови операции.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-11-06)
