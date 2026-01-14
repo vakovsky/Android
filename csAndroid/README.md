@@ -12,6 +12,8 @@
 ## [4. Използване на допълнителни контроли 2-ра част.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-11-27)
 #### [4.1 DatePicker](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-10-23)
 #### [4.2 TimePicker](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-10-23)
+#### [4.3 DatePicker](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-10-23)
+#### [4.4 TimePicker](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-10-23)
 ## [Използване на файлови операции.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-11-06)
 ## [Използване на собственни списъци със стандартни обекти - ListView, ArrayAdapter.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-10-30)
 ## [Използване на собственни списъци със собственни обекти - ListView, MyObjectAdapter.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-11-13)
