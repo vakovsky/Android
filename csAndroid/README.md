@@ -1,3 +1,5 @@
+## [За 11.02.2026](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-09-25)
+
 ## [1. Създаване на мобилно приложение с използване на Model-View-Controller и библиотека за модели.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-09-25)
 ## [2. Използване на допълнителни прозорци (Activity)]()
 #### [2.1 Използване на допълнителни прозорци: външни за приложението - Intent.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-10-02)
