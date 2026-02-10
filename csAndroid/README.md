@@ -1,4 +1,4 @@
-## [Задача за 11.02.2026]([https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-09-25](https://github.com/vakovsky/Android/blob/main/csAndroid/%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%20%D1%81%20%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0%20%D0%B8%20%D1%82%D0%B5%D0%BA%D1%81%D1%82.docx))
+## [Задача за 11.02.2026](https://github.com/vakovsky/Android/blob/main/csAndroid/%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%20%D1%81%20%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0%20%D0%B8%20%D1%82%D0%B5%D0%BA%D1%81%D1%82.docx)
 
 ## [1. Създаване на мобилно приложение с използване на Model-View-Controller и библиотека за модели.](https://github.com/vakovsky/Android/tree/main/csAndroid/parts/2024-09-25)
 ## [2. Използване на допълнителни прозорци (Activity)]()
