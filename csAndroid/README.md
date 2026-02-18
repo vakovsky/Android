@@ -39,4 +39,4 @@
         android:layout_height="wrap_content"
         android:id="@+id/datePicker1"
         android:layout_marginBottom="0.0dp" />
-    <TimePicker
+    <TimePicker/>
